@@ -1,18 +1,8 @@
-/**
- * Create a Backpack object, populate some HTML to display its properties.
- */
-
-// Single line comment
-
-/* Multi-line comment
-See! this line is also commented out! */
-
 const updateBackpack = (update) => {
   let main = document.querySelector("main"); // main is an element
   main.innerHTML = markup(backpack);
   console.info(update);
 };
-
 const backpack = {
   name: "Everyday Backpack",
   volume: 30,
