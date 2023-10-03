@@ -1,0 +1,35 @@
+backpack.newStrapLength(10,20)
+undefined
+backpack
+{name: 'Everyday Backpack', volume: 30, color: 'grey', pocketNum: 15, strapLength: {…}, …}color: "grey"lidOpen: falsename: "Everyday Backpack"newStrapLength: ƒ (lengthLeft, lengthRight)pocketNum: 15strapLength: {left: 10, right: 20}left: 10right: 20[[Prototype]]: ObjecttoggleLid: ƒ (lidStatus)arguments: nullcaller: nulllength: 1name: "toggleLid"prototype: {constructor: ƒ}[[FunctionLocation]]: script.js:15[[Prototype]]: ƒ ()[[Scopes]]: Scopes[2]volume: 30[[Prototype]]: Object
+backpack.newStrapLength(15,25)
+undefined
+backpack
+{name: 'Everyday Backpack', volume: 30, color: 'grey', pocketNum: 15, strapLength: {…}, …}
+color
+: 
+"grey"
+lidOpen
+: 
+false
+name
+: 
+"Everyday Backpack"
+newStrapLength
+: 
+ƒ (lengthLeft, lengthRight)
+pocketNum
+: 
+15
+strapLength
+: 
+{left: 15, right: 25}
+toggleLid
+: 
+ƒ (lidStatus)
+volume
+: 
+30
+[[Prototype]]
+: 
+Object
