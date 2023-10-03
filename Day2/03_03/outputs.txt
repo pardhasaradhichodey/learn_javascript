@@ -1,0 +1,35 @@
+backpack=5
+VM1409:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:9
+(anonymous) @ VM1409:1
+backpack.name="pardhu"
+'pardhu'
+backpack
+{name: 'pardhu', volume: 30, color: 'grey', pocketNum: 15, strapLength: {…}, …}
+color
+: 
+"grey"
+lidOpen
+: 
+false
+name
+: 
+"pardhu"
+newStrapLength
+: 
+ƒ (lengthLeft, lengthRight)
+pocketNum
+: 
+15
+strapLength
+: 
+{left: 26, right: 26}
+toggleLid
+: 
+ƒ (lidStatus)
+volume
+: 
+30
+[[Prototype]]
+: 
+Object
