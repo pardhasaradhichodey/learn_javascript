@@ -13,6 +13,16 @@ const everydayPack = new Backpack(
   26,
   false
 );
-
+const pardhuBackpack = new Backpack(
+  "Pardhu's Backpack",
+  23,
+  "grey",
+  18,
+  36,
+  36,
+  false
+)
 console.log("The everydayPack object:", everydayPack);
 console.log("The pocketNum value:", everydayPack.pocketNum);
+console.log("The Pardhu's Backpack object:", pardhuBackpack);
+console.log("The pocketNum value:", pardhuBackpack.pocketNum);
