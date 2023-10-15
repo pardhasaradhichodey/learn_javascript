@@ -1,22 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-    <link rel="stylesheet" href="./index.css">
-    
-</head>
-<body>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
     <div id="myDIV" class="header">
-        <h2>My To Do List</h2>
-        <input type="text" id="myInput" placeholder="Title...">
-        <span onclick="newElement()" class="addBtn">Add</span>
-      </div>
-      
-      <ul id="myUL">
-        
-      </ul>
-</body>
-<script src="./index.js"></script>
+      <h2>My To Do List</h2>
+      <form>
+        <table>
+          <tr>
+            <td><label for="title">Title:</label></td>
+            <td><input type="text" id="title" placeholder="Title..." /></td>
+            <td><label for="deadline">Deadline</label></td>
+            <td><input type="datetime-local" id="deadline" /></td>
+          </tr>
+          <tr>
+            <td><label for="desc">Description:</label></td>
+            <td>
+              <textarea
+                id="desc"
+                placeholder="Description"
+                rows="5"
+                cols="60"
+              ></textarea>
+            </td>
+          </tr>
+        </table>
+        <br />
+      </form>
+
+      <span onclick="addNewData()" class="addBtn">Add</span>
+    </div>
+    <div id="data">
+      <tabke id="tasklist"></tabke>
+    </div>
+  </body>
+  <script src="./index.js"></script>
 </html>
