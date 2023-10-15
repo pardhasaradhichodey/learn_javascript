@@ -6,13 +6,13 @@
   margin:0px;
  } 
   /* Remove margins and padding from the list */
-  ul {
+  #tasklist tbody {
     margin: 0;
     padding: 0;
   }
   
   /* Style the list items */
-  ul li {
+  #tasklist tbody tr {
     cursor: pointer;
     position: relative;
     padding: 12px 8px 12px 40px;
@@ -28,24 +28,24 @@
   }
   
   /* Set all odd list items to a different color (zebra-stripes) */
-  ul li:nth-child(odd) {
+  #tasklist tbody tr:nth-child(odd) {
     background: #f9f9f9;
   }
   
   /* Darker background-color on hover */
-  ul li:hover {
+  #tasklist tbody tr:hover {
     background: #ddd;
   }
   
   /* When clicked on, add a background color and strike out text */
-  ul li.checked {
+  #tasklist tbody tr.checked {
     background: #888;
     color: #fff;
     text-decoration: line-through;
   }
   
   /* Add a "checked" mark when clicked on */
-  ul li.checked::before {
+  #tasklist tbody tr.checked::before {
     content: '';
     position: absolute;
     border-color: #fff;
@@ -57,7 +57,9 @@
     height: 15px;
     width: 7px;
   }
-  
+  #tasklist tr td{
+    padding: 12px 16px 12px 16px;
+  }
   /* Style the close button */
   .close {
     position: absolute;
