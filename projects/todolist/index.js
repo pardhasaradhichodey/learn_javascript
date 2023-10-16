@@ -1,10 +1,11 @@
 //class for creating task objects
 class task {
-  constructor(title, description, deadline, addedDate) {
+  constructor(title, description, deadline, addedDate, status = false) {
     this.title = title;
     this.description = description;
     this.deadline = deadline;
     this.addedDate = addedDate;
+    this.status = status;
   }
 }
 //Header for Tasks Table
@@ -58,6 +59,20 @@ function addOnclick() {
       GenerateTable();
     };
   }
+  var list = document.querySelector("#tasklist tbody tr");
+  console.log(list);
+  list.addEventListener(
+    "click",
+    function (ev) {
+      console.log('Hello');
+      list.classList.toggle("checked");
+      if (ev.target.tagName === "tr") {
+        ev.target.classList.toggle("checked");
+        console.log('Hello');
+      }
+    },
+    false
+  );
 }
 
 //Getting Tasks from local storage
@@ -104,16 +119,16 @@ function addNewData() {
   title = document.getElementById("title").value;
   deadline = document.getElementById("deadline").value;
   description = document.getElementById("desc").value;
-  if(title==''){
-    alert('Title Needed')
+  if (title == "") {
+    alert("Title Needed");
     return;
   }
-  if (deadline==''){
-    alert('Deadline Needed')
+  if (deadline == "") {
+    alert("Deadline Needed");
     return;
   }
-  if (description==''){
-    alert('Description Needed')
+  if (description == "") {
+    alert("Description Needed");
     return;
   }
   dateAdded = new Date();
@@ -123,8 +138,6 @@ function addNewData() {
   localStorage.setItem("tasks", temp);
   GenerateTable();
 }
-
-
 
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function () {
@@ -140,16 +153,6 @@ for (i = 0; i < close.length; i++) {
 }
 
 // Add a "checked" symbol when clicking on a list item
-// var list = document.querySelector("ul");
-// list.addEventListener(
-//   "click",
-//   function (ev) {
-//     if (ev.target.tagName === "LI") {
-//       ev.target.classList.toggle("checked");
-//     }
-//   },
-//   false
-// );
 
 // // Create a new list item when clicking on the "Add" button
 // function newElement() {

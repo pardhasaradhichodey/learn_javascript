@@ -9,13 +9,12 @@
   <body>
     <div id="myDIV" class="header">
       <h2>My To Do List</h2>
-      <form>
-        <table class="headTitleForm">
+
+      <table class="headTitleForm">
+        <form>
           <tr>
             <td><label for="title">Title:</label></td>
             <td><input type="text" id="title" placeholder="Title..." /></td>
-            <td><label for="deadline">Deadline</label></td>
-            <td><input type="datetime-local" id="deadline" /></td>
           </tr>
           <tr>
             <td><label for="desc">Description:</label></td>
@@ -28,9 +27,13 @@
               ></textarea>
             </td>
           </tr>
-        </table>
-        <br />
-      </form>
+          <tr>
+            <td><label for="deadline">Deadline</label></td>
+            <td><input type="datetime-local" id="deadline" /></td>
+          </tr>
+        </form>
+      </table>
+      <br />
 
       <span onclick="addNewData()" class="addBtn">Add</span>
     </div>
