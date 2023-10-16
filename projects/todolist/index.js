@@ -51,7 +51,7 @@ function addOnclick() {
   var i;
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
-      console.log(this.id);
+      //console.log(this.id);
       indexer = this.id;
       tasks.splice(indexer, 1);
       temp = JSON.stringify(tasks);
@@ -59,20 +59,22 @@ function addOnclick() {
       GenerateTable();
     };
   }
-  var list = document.querySelector("#tasklist tbody tr");
-  console.log(list);
-  list.addEventListener(
-    "click",
-    function (ev) {
-      console.log('Hello');
-      list.classList.toggle("checked");
-      if (ev.target.tagName === "tr") {
-        ev.target.classList.toggle("checked");
-        console.log('Hello');
-      }
-    },
-    false
-  );
+  var list = document.querySelectorAll("#tasklist tbody tr");
+  //console.log(list);
+  list.forEach((element) => {
+    element.addEventListener(
+      "click",
+      function (ev) {
+        element.classList.toggle("checked");
+        indexer = element.querySelector("span").id;
+        tasks[indexer].status = !tasks[indexer].status;
+        //console.log(tasks[indexer].status);
+        temp = JSON.stringify(tasks);
+        localStorage.setItem("tasks", temp);
+      },
+      false
+    );
+  });
 }
 
 //Getting Tasks from local storage
@@ -105,6 +107,10 @@ function GenerateTable() {
     row.forEach((element1) => {
       tr.appendChild(element1);
     });
+    if (element.status) {
+      console.log("Hi");
+      tr.classList.add("checked");
+    }
     tableList.appendChild(tr);
     i++;
   });
@@ -137,19 +143,6 @@ function addNewData() {
   temp = JSON.stringify(tasks);
   localStorage.setItem("tasks", temp);
   GenerateTable();
-}
-
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function () {
-    console.log(this.id);
-    indexer = this.id;
-    tasks.splice(indexer, 1);
-    temp = JSON.stringify(tasks);
-    localStorage.setItem("tasks", temp);
-    GenerateTable();
-    //var div = this.parentElement;
-    //div.style.display = "none";
-  };
 }
 
 // Add a "checked" symbol when clicking on a list item
